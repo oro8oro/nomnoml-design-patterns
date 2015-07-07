@@ -51,13 +51,13 @@ Everyone is welcome to improve on this and provide implementation in various pro
 	 +createProductB()
 ]
 
-[AbstractFactory]<:--[ConcreteFactory1
+[AbstractFactory]<:-[ConcreteFactory1
 	|
 	| +createProductA()
 	 +createProductB()
 ]
 
-[AbstractFactory]<:--[ConcreteFactory2
+[AbstractFactory]<:-[ConcreteFactory2
 	|
 	| +createProductA()
 	 +createProductB()
@@ -74,13 +74,13 @@ Everyone is welcome to improve on this and provide implementation in various pro
 	| 
 ]
 
-[AbstractProductA]<:--[ProductA1
+[AbstractProductA]<:-[ProductA1
 	|
 	|
 
 ]
 
-[AbstractProductA]<:--[ProductA2
+[AbstractProductA]<:-[ProductA2
 	|
 	|
 
@@ -91,13 +91,13 @@ Everyone is welcome to improve on this and provide implementation in various pro
 	| 
 ]
 
-[AbstractProductB]<:--[ProductB1
+[AbstractProductB]<:-[ProductB1
 	|
 	|
 
 ]
 
-[AbstractProductB]<:--[ProductB2
+[AbstractProductB]<:-[ProductB2
 	|
 	|
 
@@ -147,7 +147,41 @@ Everyone is welcome to improve on this and provide implementation in various pro
 
 ### Façade
 
+
 ![Façade](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/facade/facade.png)
+
+
+```
+
+[<package>Subsystem Classes |
+	
+    [Class1]
+    [Class2]
+    [Class3]
+    [Class4]
+    [Class5]
+    [Class6]
+    [Class7]
+]
+
+[<abstract>Facade
+	|
+	| 
+]
+
+[Class2]-->[Class1]
+[Facade]->[Class2]
+[Facade]->[Class3]
+[Facade]->[Class4]
+[Facade]->[Class6]
+[Facade]->[Class7]
+
+[Class5]<:-[Class6]
+[Class5]<:-[Class7]
+[Class1]<:-[Class3]
+
+```
+
 
 ### Flyweight
 
