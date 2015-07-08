@@ -431,9 +431,17 @@ g.Operation()]
 ```
 
 
-![Command Sequence](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/command/command_seq.png)
+![Command Sequence](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/command/command_seq2.png)
 
 ```
+participant Receiver
+participant Client
+participant ConcreteCommand
+participant Invoker
+Client-->ConcreteCommand: <<create>>\nnew Command(Receiver)
+Client->Invoker: StoreCommand(Command)
+Invoker->ConcreteCommand: Execute()
+ConcreteCommand->Receiver: Action()
 
 ```
 
@@ -527,10 +535,14 @@ g.Operation()]
 ```
 
 
-![Memento](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/memento/memento_seq.png)
+![Memento](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/memento/memento_seq2.png)
 
 ```
-
+Caretaker->Originator: CreateMemento()
+Originator-->Memento: <<create>>\n new Memento
+Originator->Memento: SetState()
+Caretaker->Originator: SetMemento(Memento m)
+Originator->Memento: GetState()
 ```
 
 
@@ -561,9 +573,18 @@ g.Operation()]
 ```
 
 
-![Observer Sequence](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/observer/observer_seq.png)
+![Observer Sequence](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/observer/observer_seq2.png)
 
 ```
+participant ConcreteSubject
+participant ConcreteObserver1
+participant ConcreteObserver2
+ConcreteObserver1->ConcreteSubject: SetState()
+ConcreteSubject->ConcreteSubject: Notify()
+ConcreteSubject->ConcreteObserver1: Update()
+ConcreteObserver1->ConcreteSubject: GetState()
+ConcreteSubject->ConcreteObserver2: Update()
+ConcreteObserver2->ConcreteSubject: GetState()
 
 ```
 
@@ -657,8 +678,14 @@ g.Operation()]
 ```
 
 
-![Visitor](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/visitor/visitor_seq.png)
+![Visitor](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/visitor/visitor_seq2.png)
 
 ```
-
+ObjectStructure->ConcreteElementA: Accept(Visitor v)
+participant ConcreteElementB
+ConcreteElementA->ConcreteVisitor1: VisitConcreteElementA(ConcretElementA)
+ConcreteVisitor1->ConcreteElementA: OperationA()
+ObjectStructure->ConcreteElementB: Accept(Visitor v)
+ConcreteElementB->ConcreteVisitor1: VisitConcreteElementA(ConcretElementA)
+ConcreteVisitor1->ConcreteElementB: OperationA()
 ```
