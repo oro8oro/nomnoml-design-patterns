@@ -445,6 +445,29 @@ g.Operation()]
 
 ```
 
+[Client
+	(from desing_patterns)|
+    |
+]->[Agregate]
+[Client]->[<abstract>Iterator |
+	|+First()
+    +Next()
+    +IsDone()
+    +CurrentItem()
+]
+
+[Iterator]<:-[ConcreteIterator]
+[ConcreteAgregate]--[<note>return new ConcreteIterator(this)]
+[ConcreteAgregate]-->[ConcreteIterator]
+[<abstract>Agregate |
+	|+CreateIterator()
+]<:-[ConcreteAgregate |
+	|+CreateIterator()
+]
+
+[ConcreteAgregate]<-[ConcreteIterator||]
+
+
 ```
 
 ### Mediator
@@ -520,6 +543,37 @@ g.Operation()]
 
 ```
 
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>Visitor
+	|
+    |+VisitConcreteElementA(ConcretElementA)
+    +VisitConcreteElementB(ConcretElementB)
+]
+
+[Visitor]<:-[ConcreteVisitor1 |
+	|+VisitConcreteElementA(ConcretElementA)
+    +VisitConcreteElementB(ConcretElementB)
+]
+
+[Visitor]<:-[ConcreteVisitor2 |
+	|+VisitConcreteElementA(ConcretElementA)
+    +VisitConcreteElementB(ConcretElementB)
+]
+
+[Client]->[ObjectStructure||]
+[ObjectStructure]->[Element ||]
+
+[Element]<:-[ConcreteElementA ||+Accept(Visitor v)
+	+OperationA()
+]
+[ConcreteElementA]--[<note>v->VisitConcreteElementA(this)]
+[Element]<:-[ConcreteElementB ||+Accept(Visitor v)
+	+OperationB()
+]
+[ConcreteElementB]--[<note>v->VisitConcreteElementB(this)]
 ```
 
 
