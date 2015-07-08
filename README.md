@@ -232,9 +232,54 @@ Client->ConcreteBuilder:getResult()
 
 ![Bridge](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/bridge/bridge.png)
 
+```
+
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>Abstraction ||+Operation()]
+
+[Abstraction]<:-[RefinedAbstraction ||]
+
+[Abstraction]--[<note>imp->OperationImp()]
+[Abstraction]o- +imp[Implementor ||+OperationImp()]
+[Implementor]<:-[ConcreteImplementorA ||+OperationImp()]
+[Implementor]<:-[ConcreteImplementorB ||+OperationImp()]
+
+```
+
 ### Composite
 
-![Composite](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/composite/composite.png)
+![Composite](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/composite/composite2.png)
+
+```
+
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>Component
+	|
+    |+Operation()
+    +Add(Component)
+    +Remove(Component)
+    +GetChild(int)
+]
+
+[Component]<:-[Leaf||+Operation()]
+[Component]<:-[Composite|
+	|+Operation()
+    +Add(Component)
+    +Remove(Component)
+    +GetChild(int)
+]
+[Composite]<:-[RefinedAbstraction ||]
+[Composite]o- +children[Component]
+[Composite]--[<note>forall g in children
+g.Operation()]
+```
+
 
 ### Decorator
 
