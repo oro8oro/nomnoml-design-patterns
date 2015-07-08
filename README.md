@@ -142,7 +142,7 @@ Everyone is welcome to improve on this and provide implementation in various pro
 ```
 
 
-![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder_seq.svg)
+![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder_seq.png)
 
 ```
 participant Client
