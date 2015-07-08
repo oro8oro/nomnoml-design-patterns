@@ -113,8 +113,6 @@ Everyone is welcome to improve on this and provide implementation in various pro
 
 ![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder.png)
 
-![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder_seq.png)
-
 
 ```
 [Builder
@@ -128,7 +126,7 @@ Everyone is welcome to improve on this and provide implementation in various pro
     +new Director()
 ]o-[Builder]
 
-[Director]--[<note>this.builder.buildPart()]
+[Director]--[<note>this.builder.buildPart();]
 [Builder]<:-[ConcreteBuilder
 	|
     |+buildPart()
@@ -141,6 +139,21 @@ Everyone is welcome to improve on this and provide implementation in various pro
 
 [ConcreteBuilder]--><<create>>[Product]
 
+```
+
+
+![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder_seq.svg)
+
+```
+participant Client
+participant Director
+Client-->ConcreteBuilder:<<create>>\nnew ConcreteBuilder
+Client-->Director:<<create>>\nnew Director(ConcreteBuilder)
+Client->Director:construct()
+Director->ConcreteBuilder:buldPartA()
+Director->ConcreteBuilder:buldPartA()
+Director->ConcreteBuilder:buldPartA()
+Client->ConcreteBuilder:getResult()
 ```
 
 
