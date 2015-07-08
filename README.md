@@ -108,13 +108,41 @@ Everyone is welcome to improve on this and provide implementation in various pro
 [ConcreteFactory2]-->[ProductA2]
 [ConcreteFactory2]-->[ProductB2]
 ```
-
-
+ 
 ### Builder
 
 ![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder.png)
 
 ![Builder](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/builder/builder_seq.png)
+
+
+```
+[Builder
+	|
+    |+buildPart()
+]
+
+[Director |
+	+builder: Builder
+    |+construct()
+    +new Director()
+]o-[Builder]
+
+[Director]--[<note>this.builder.buildPart()]
+[Builder]<:-[ConcreteBuilder
+	|
+    |+buildPart()
+    +getResult():Product
+    +new ConcreteBuilder()
+    +buildPartA()
+    +buildPartB()
+    +buildPartC()
+]
+
+[ConcreteBuilder]--><<create>>[Product]
+
+```
+
 
 ### Factory Method
 
