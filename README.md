@@ -179,6 +179,22 @@ Client->ConcreteBuilder:getResult()
 
 ![Prototype](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/prototype/prototype.png)
 
+
+```
+[Client 
+	|
+	|+Operation()
+]--[<note>p = prototype->Clone()]
+
+[Client]->+prototype[<abstract>Prototype||+Clone()]
+[Prototype]<:-[ConcretePrototype1 ||+Clone()]
+[ConcretePrototype1]--[<note>return copy of self]
+[Prototype]<:-[ConcretePrototype2 ||+Clone()]
+[ConcretePrototype2]--[<note>return copy of self]
+
+```
+
+
 ### Singleton
 
 ![Singleton](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/singleton/singleton.png)
