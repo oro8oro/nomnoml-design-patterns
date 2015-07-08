@@ -161,6 +161,20 @@ Client->ConcreteBuilder:getResult()
 
 ![Factory Method](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/factory/factory.png)
 
+
+```
+[<abstract>Creator | |+FactoryMethod()
+	+AnOperation()
+]
+[<abstract>Product ||]<:-[ConcreteProduct||]
+[Creator]<:-[ConcreteCreator||+FactoryMethod()]
+[ConcreteCreator]-->[ConcreteProduct]
+[Creator]--[<note>product= FactoryMethod()]
+[ConcreteCreator]--[<note>return new ConcreteProduct]
+
+```
+
+
 ### Prototype
 
 ![Prototype](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/prototype/prototype.png)
