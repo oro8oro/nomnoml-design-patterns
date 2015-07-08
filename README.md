@@ -338,48 +338,161 @@ g.Operation()]
 
 ![Flyweight](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/flyweight/flyweight.png)
 
+```
+
+```
+
+
 ### Proxy 
 
-![Proxy](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/proxy/proxy.png)
+![Proxy](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/proxy/proxy2.png)
+
+```
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>Subject
+	|
+    |+Request()
+]
+
+[Subject]<:-[RealSubject ||+Request()]
+[Subject]<:-[Proxy ||+Request()]
+
+[Proxy]-->[RealSubject]
+[Proxy]--[<note>realSubject->Request()]
+```
 
 ## Behavioral Patterns
 ### Chain of Responsibility
 
-![Chain of Responsibility](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/chain_of_responsibility/chain_of_responsibility.png)
+![Chain of Responsibility](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/chain_of_responsibility/chain_of_responsibility2.png)
+
+```
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>Handler
+	|
+    |+HandleRequest()
+]
+
+[Handler]<:-[ConcreteHandler1||+HandleRequest()]
+[Handler]<:-[ConcreteHandler2||+HandleRequest()]
+
+[Handler]-> +successor [Handler]
+```
+
 
 ### Command
 
-![Command](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/command/command.png)
+![Command](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/command/command2.png)
+
+```
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>Receiver
+	|
+    |+Action()
+]
+
+[Receiver]<- +receiver [ConcreteCommand |+state|+Execute()]
+[Invoker ||+StoreCommand()]o-[Command ||+Execute()]
+[Command]<:-[ConcreteCommand]
+
+[ConcreteCommand]--[<note>receiver->Action()]
+[Client]-->[ConcreteCommand]
+
+```
+
 
 ![Command Sequence](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/command/command_seq.png)
 
+```
+
+```
+
+
 ### Interpreter
 
-![Interpreter](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/interpreter/interpreter.png)
+![Interpreter](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/interpreter/interpreter2.png)
+
+```
+
+[Client
+	(from design_patterns)
+    |
+    |
+]->[<abstract>AbstractExpression
+	|
+    |+Interpret(Context)
+]
+
+[Client]->[Context]
+
+[AbstractExpression]<:-[TerminalExpression ||+Interpret(Context)]
+[AbstractExpression]<:-[NonterminalExpression ||+Interpret(Context)]
+[AbstractExpression]-o[NonterminalExpression]
+```
 
 ### Iterator
 
-![Iterator](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/iterator/iterator.png)
+![Iterator](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/iterator/iterator2.png)
+
+```
+
+```
 
 ### Mediator
 
-![Mediator](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/mediator/mediator.png)
+![Mediator](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/mediator/mediator2.png)
+
+```
+
+```
 
 ### Memento
 
-![Memento](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/memento/memento.png)
+![Memento](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/memento/memento2.png)
+
+```
+
+```
+
 
 ![Memento](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/memento/memento_seq.png)
 
+```
+
+```
+
+
 ### Observer
 
-![Observer](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/observer/observer.png)
+![Observer](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/observer/observer2.png)
+
+```
+
+```
+
 
 ![Observer Sequence](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/observer/observer_seq.png)
 
+```
+
+```
+
 ### State
 
-![State](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/state/state.png)
+![State](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/state/state2.png)
+
+```
+
+```
 
 ### Strategy
 
@@ -394,7 +507,7 @@ g.Operation()]
 
 ### Template Method
 
-![Template Method](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/template_method/template_method.png)
+![Template Method](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/template_method/template_method2.png)
 
 ```
 
@@ -403,6 +516,15 @@ g.Operation()]
 
 ### Visitor
 
-![Visitor](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/visitor/visitor.png)
+![Visitor](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/visitor/visitor2.png)
+
+```
+
+```
+
 
 ![Visitor](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/visitor/visitor_seq.png)
+
+```
+
+```
