@@ -199,10 +199,34 @@ Client->ConcreteBuilder:getResult()
 
 ![Singleton](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/creational/singleton/singleton.png)
 
+```
+[Singleton
+  	|+static uniqueInstance
+    +singletonData
+    |static Instance()
+    +SingletonOperation()
+    +GetSingletonData()
+] -- [<note>return uniqueInstance]
+```
+
+
 ## Structural Patterns
 ### Adapter
 
 ![Adapter MultiInheritance](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/adapter/adapter.png)
+
+```
+[Client
+	(from design_patterns)
+    |
+    |
+]->[Target ||+Request()]
+
+[Target]<:-[Adapter ||+Request()]
+[Adapter]-:>[Adaptee ||+SpecificRequest()]
+[Adapter]--[<note>SpecificRequest()]
+```
+
 
 ### Bridge
 
@@ -326,6 +350,11 @@ Client->ConcreteBuilder:getResult()
 ### Template Method
 
 ![Template Method](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/template_method/template_method.png)
+
+```
+
+
+```
 
 ### Visitor
 
