@@ -215,6 +215,17 @@ Client->ConcreteBuilder:getResult()
 ### Decorator
 
 ![Decorator](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/decorator/decorator.png)
+![Decorator](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/structural/decorator/decorator2.png)
+
+```
+[<abstract>Component||  operation()]
+  [Client] depends --> [Component]
+  [Decorator|- next: Component]
+  [Decorator] decorates -- [ConcreteComponent]
+  [Component] <:- [Decorator]
+  [Component] <:- [ConcreteComponent]
+```
+
 
 ### Façade
 
@@ -304,6 +315,13 @@ Client->ConcreteBuilder:getResult()
 ### Strategy
 
 ![Strategy](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/strategy/strategy.png)
+![Strategy](https://raw.githubusercontent.com/oro8oro/nomnoml-design-patterns/master/generated/Model/loretek/design_patterns/behavioral/strategy/strategy2.png)
+
+```
+  [Client] o- [<abstract>Strategy|  Operation()]
+  [Strategy] <:-- [StrategyA]
+  [Strategy] <:-- [StrategyB]
+```
 
 ### Template Method
 
